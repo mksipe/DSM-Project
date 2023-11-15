@@ -15,7 +15,25 @@ Into to Data Science and Mining Final Project
 ## Dataset
 
   All data is gathered from [KAGGLE](https://www.kaggle.com/datasets/aymenabb/ddos-evaluation-dataset-cic-ddos2019)
-  
+
+
+# Procedure
+
+## Preparing the data
+
+### Initial Questions:
+
+- What does it look like?
+- What features does it have?
+- What features is it missing?
+- Is the data good? Does it make sense?
+- Is the data complete?
+- Does it answer your question?
+
+### Fixing Missing Data
+
+  To fix any missing or corrupted data captured within this dataset, I will approximate the data using the mode and/or median.
+
 
 
   

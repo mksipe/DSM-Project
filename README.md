@@ -16,7 +16,6 @@ Into to Data Science and Mining Final Project
 
   All data is gathered from [KAGGLE](https://www.kaggle.com/datasets/aymenabb/ddos-evaluation-dataset-cic-ddos2019)
 
-
 # Procedure
 
 ## Preparing the data
@@ -29,6 +28,10 @@ Into to Data Science and Mining Final Project
 - Is the data good? Does it make sense?
 - Is the data complete?
 - Does it answer your question?
+
+### Formatting the Data
+
+  To make the data usable by WEKA, I will open it in Excel and export it as a CSV file format.
 
 ### Fixing Missing Data
 

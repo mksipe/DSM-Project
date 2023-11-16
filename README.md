@@ -22,7 +22,12 @@ Into to Data Science and Mining Final Project
 
 ### Initial Questions:
 
-- What does it look like?
+#### What does it look like?
+
+  The data based off of the raw format is stored in its own CSV format and has an extra newline within the data along with spaces between the column title. We can extract the specified datatype using a Python Script to determine the datatype for us.
+
+  The Header Column shows that the following are stored in the dataset:
+
 - What features does it have?
 - What features is it missing?
 - Is the data good? Does it make sense?

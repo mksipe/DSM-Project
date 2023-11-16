@@ -134,11 +134,25 @@ Based on the data that is gathered, it does make sense though a quick glance fro
 ### Formatting the Data
 
   To make the data usable by WEKA, I will open it in Excel and export it as a CSV file format.
+  
+  There is one issue while loading the dataset: 
+
+    The column `Fwd Header Length` appears more than once which will cause an issue. Because of this, I changed the headers to Fwd Header Length 1 and 2.
+
+  The only other change made is to remove the initial space for the headers in each column that were either prepended or appended to the end of the label.
 
 ### Fixing Missing Data
 
   To fix any missing or corrupted data captured within this dataset, I will approximate the data using the mode and/or median.
 
+  There are some pieces of data that are missing in this dataset.
 
+  |Header|Amount Missing|Percent Missing|
+  |-|-|-|
+  |Flow Bytes|4|0%|
 
-  
+Compared to the rest of the dataset, this is so insignificantly small that it can be removed from the dataset and have virtually no effect on the outcome of the entire dataset.
+
+In order to remove these values, we can use `RemoveWithValues -S 0.0 -C last -L first-last` to remove these four rows from our dataset.
+
+## Creating a supervised model

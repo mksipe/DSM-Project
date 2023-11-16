@@ -27,6 +27,7 @@ Into to Data Science and Mining Final Project
   The data based off of the raw format is stored in its own CSV format and has an extra newline within the data along with spaces between the column title. We can extract the specified datatype using a Python Script to determine the datatype for us.
 
   The Header Column shows that the following are stored in the dataset:
+
 |Header|Datatype|
 |:-|:-:|
 |Flow ID|string|
@@ -115,6 +116,7 @@ Into to Data Science and Mining Final Project
 |Idle Min|integer|
 |Label|string|
 
+These values were extracted using the [get_data_header.py](./get_data_header.py)
 
 
 

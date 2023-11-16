@@ -119,12 +119,17 @@ Into to Data Science and Mining Final Project
 These values were extracted using the [get_data_header.py](./get_data_header.py)
 
 
+#### What features does it have?
 
-- What features does it have?
-- What features is it missing?
-- Is the data good? Does it make sense?
-- Is the data complete?
-- Does it answer your question?
+The features that this dataset have are that it has many different factors for each flag, and specifically the rate and flow for each individual packet that is being sent over the wire. This allows for more specific details to be obtained while analyzing the data.
+
+#### What features is it missing?
+
+The features that are missing would be the context around the packets. Such as, what is the traffic that is being generated used for? What production area is this information gathered from?
+
+#### Is the data good? Does it make sense?
+
+Based on the data that is gathered, it does make sense though a quick glance from reading the files from CSV. 
 
 ### Formatting the Data
 

@@ -143,7 +143,7 @@ Based on the data that is gathered, it does make sense though a quick glance fro
 
 ### Fixing Missing Data
 
-  To fix any missing or corrupted data captured within this dataset, I will approximate the data using the mode and/or median.
+  To fix any missing or corrupted data captured within this dataset, I will remove the missing data rows since the amount of data missing is so low.
 
   There are some pieces of data that are missing in this dataset.
 

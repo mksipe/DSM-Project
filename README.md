@@ -181,3 +181,36 @@ At this point, the data has been cleaned and the Flow Bytes truly have no missin
 
 At this point, I am looking for trends or patterns within the data to be able to make smart decisions from it. Such as what different factors or categories of each data can provide useful insights to what can contribute to a Denial of Service attack. 
 
+### Supervised Models
+
+We have enough data to determine the conditions that need to be met to consiter traffic to be a part of a DDoS attack. We have several models available to show us whatever kind of information we want to gather useful insight behind the data.
+
+#### J48
+
+A J48 Model will help us visualize how traffic can be consitered malicious. 
+> [Source](<Supervised Models/J48/output.txt>)
+
+Configuration:
+
+|Option|Value|
+|-|-|
+|batchSize|100|
+|binarySplits|False|
+|collapseTree|True|
+|confidenceFactor|0.25|
+|debug|False|
+|doNotCheckCapabilities|False|
+|doNotMakeSplitPointActualValue|False|
+|minNumObj|2|
+|numDecimalPlaces|2|
+|numFolds|3|
+|reducedErrorPruning|False|
+|saveInstanceData|False|
+|seed|1|
+|subtreeRaising|True|
+|unpruned|True|
+|useLaplace|False|
+|useMDLcorrction|True|
+
+Although this chart is useful, the amount of leaves and the overall size of this tree is so large that it provides no useful data on its own. The tree produced a chart that has 96771 leaves and an overall size of 96787. In order to make this more useful we need to either narrow it down by quite a bit or to find sets of rules that make this more useful.
+

@@ -143,16 +143,41 @@ Based on the data that is gathered, it does make sense though a quick glance fro
 
 ### Fixing Missing Data
 
-  To fix any missing or corrupted data captured within this dataset, I will remove the missing data rows since the amount of data missing is so low.
-
-  There are some pieces of data that are missing in this dataset.
+  To fix any missing or corrupted data captured within this dataset, I will approximate the value of the rows that may have missing data using the mean and/or median of preexisting data.
 
   |Header|Amount Missing|Percent Missing|
   |-|-|-|
   |Flow Bytes|4|0%|
 
-Compared to the rest of the dataset, this is so insignificantly small that it can be removed from the dataset and have virtually no effect on the outcome of the entire dataset.
+Compared to the rest of the dataset, this is so insignificantly small that it can be removed from the dataset and have virtually no effect on the outcome of the entire dataset. However with WEKA, there is a built in function to keep this data within this dataset and to approximate the values.
 
-In order to remove these values, we can use `RemoveWithValues -S 0.0 -C last -L first-last` to remove these four rows from our dataset.
+In order to fix these values, we can use `RemoveWithValues -S 0.0 -C last -L first-last` to approximate these rows as needed.
 
-## Creating a supervised model
+While using this unsupervised filter, we can change this setting to have the proper attribute index to do more with this data.
+
+The current configuration for this filter are as follows:
+
+|Option|Value|
+|-|-|
+|attributeIndex|21|
+|debug|False|
+|doNotCheckCapabilities|False|
+|dontFilterAfterFirstBatcH|False|
+|invertSelection|False|
+|matchMissingValues|True|
+|modifyHeader|False|
+|nominalIndices|first-last|
+|splitPoint|0.0|
+
+At this point, the data has been cleaned and the Flow Bytes truly have no missing data.
+
+  |Header|Amount Missing|Percent Missing|
+  |-|-|-|
+  |Flow Bytes|0|0%|
+
+  
+
+## Exploring Different Models within the Dataset
+
+At this point, I am looking for trends or patterns within the data to be able to make smart decisions from it. Such as what different factors or categories of each data can provide useful insights to what can contribute to a Denial of Service attack. 
+

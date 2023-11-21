@@ -137,7 +137,7 @@ Based on the data that is gathered, it does make sense though a quick glance fro
   
   There is one issue while loading the dataset: 
 
-    The column `Fwd Header Length` appears more than once which will cause an issue. Because of this, I changed the headers to Fwd Header Length 1 and 2.
+  The column `Fwd Header Length` appears more than once which will cause an issue. Because of this, I changed the headers to Fwd Header Length 1 and 2.
 
   The only other change made is to remove the initial space for the headers in each column that were either prepended or appended to the end of the label.
 
@@ -214,3 +214,38 @@ Configuration:
 
 Although this chart is useful, the amount of leaves and the overall size of this tree is so large that it provides no useful data on its own. The tree produced a chart that has 96771 leaves and an overall size of 96787. In order to make this more useful we need to either narrow it down by quite a bit or to find sets of rules that make this more useful.
 
+### Further Refining the Dataset
+
+There is some information we can remove completely from the dataset due to the complete absence of context, such as:
+Flow ID, Destination IP, Source IP.
+
+These can all be removed as since we do not know wether this traffic is internal, what kind of attack is determined, or simply wether this traffic is from multiple sources, these questions we cannot gather strictly from the information that has been given. So to simplify the model we can remove these fields. 
+
+Furthermore, we can use this model to make explicit rules upon where this traffic is found in an actual production environment.
+chrom
+
+Upon reloading the dataset, we can fix the issue with the Flow Bytes once again using a similar configuration:
+
+|Option|Value|
+|-|-|
+|attributeIndex|18|
+|debug|False|
+|doNotCheckCapabilities|False|
+|dontFilterAfterFirstBatcH|False|
+|invertSelection|False|
+|matchMissingValues|True|
+|modifyHeader|False|
+|nominalIndices|first-last|
+|splitPoint|0.0|
+
+Notice how the attributeIndex is now 18 instead of 21.
+
+> [Source](Further_Cleaned_DDoS_Dataset.arff)
+
+#### J48-2
+
+We can now generate our second iteration of a J48 graph.
+
+> [Source](<Supervised Models/j48-2/output.txt>)
+
+![Alt text](<Supervised Models/j48-2/Screenshot_20231120_200318.png>)

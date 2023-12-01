@@ -222,7 +222,6 @@ Flow ID, Destination IP, Source IP.
 These can all be removed as since we do not know wether this traffic is internal, what kind of attack is determined, or simply wether this traffic is from multiple sources, these questions we cannot gather strictly from the information that has been given. So to simplify the model we can remove these fields. 
 
 Furthermore, we can use this model to make explicit rules upon where this traffic is found in an actual production environment.
-chrom
 
 Upon reloading the dataset, we can fix the issue with the Flow Bytes once again using a similar configuration:
 
